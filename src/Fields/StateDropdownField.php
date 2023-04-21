@@ -170,7 +170,7 @@ class StateDropdownField extends DropdownField
         }
 
         if ($globalDefaults && $includeProvinces) {
-            $states = (bool)$this->config('states_first')
+            $states = (bool)$this->config()->get('states_first')
                 ? array_merge($states, $this->getDefaultProvincesList())
                 : array_merge($this->getDefaultProvincesList(), $states);
         }
