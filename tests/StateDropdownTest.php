@@ -113,7 +113,6 @@ class StateDropdownTest extends SapphireTest
 
         $dropdown = StateDropdownField::create('TestField', 'Test Field', $statesSource);
         $this->assertEquals($statesExpected, $dropdown->getSource());
-
     }
 
     public function testNonArraySource()
@@ -143,5 +142,4 @@ class StateDropdownTest extends SapphireTest
         $dropdown2 = StateDropdownField::create('TestField2', 'Test Field 2');
         $this->assertEquals(['-'], $dropdown2->getDisabledItems());
     }
-
 }
