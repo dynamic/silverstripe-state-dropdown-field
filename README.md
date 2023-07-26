@@ -5,10 +5,10 @@ A simple state dropdown field for SilverStripe forms. This dropdown defaults to 
 [![CI](https://github.com/dynamic/silverstripe-state-dropdown-field/actions/workflows/ci.yml/badge.svg)](https://github.com/dynamic/silverstripe-state-dropdown-field/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/dynamic/silverstripe-state-dropdown-field/branch/master/graph/badge.svg)](https://codecov.io/gh/dynamic/silverstripe-state-dropdown-field)
 
-[![Latest Stable Version](https://poser.pugx.org/dynamic/silverstripe-state-dropdown-field/v/stable)](https://packagist.org/packages/dynamic/silverstripe-state-dropdown-field)
-[![Total Downloads](https://poser.pugx.org/dynamic/silverstripe-state-dropdown-field/downloads)](https://packagist.org/packages/dynamic/silverstripe-state-dropdown-field)
-[![Latest Unstable Version](https://poser.pugx.org/dynamic/silverstripe-state-dropdown-field/v/unstable)](https://packagist.org/packages/dynamic/silverstripe-state-dropdown-field)
-[![License](https://poser.pugx.org/dynamic/silverstripe-state-dropdown-field/license)](https://packagist.org/packages/dynamic/silverstripe-state-dropdown-field)
+[![Latest Stable Version](https://poser.pugx.org/dynamic/state-dropdown-field/v/stable)](https://packagist.org/packages/dynamic/state-dropdown-field)
+[![Total Downloads](https://poser.pugx.org/dynamic/state-dropdown-field/downloads)](https://packagist.org/packages/dynamic/state-dropdown-field)
+[![Latest Unstable Version](https://poser.pugx.org/dynamic/state-dropdown-field/v/unstable)](https://packagist.org/packages/dynamic/state-dropdown-field)
+[![License](https://poser.pugx.org/dynamic/state-dropdown-field/license)](https://packagist.org/packages/dynamic/state-dropdown-field)
 
 ## Requirements
 
