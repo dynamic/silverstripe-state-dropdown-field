@@ -18,7 +18,7 @@
     }
   ],
   "require": {
-    "silverstripe/recipe-cms": "^5.0"
+    "silverstripe/recipe-cms": "^5.0 || ^6.0"
   },
   "require-dev": {
     "silverstripe/recipe-testing": "^2"
@@ -36,7 +36,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.0.x-dev"
+      "dev-master": "3.0.x-dev"
     }
   }
 }
