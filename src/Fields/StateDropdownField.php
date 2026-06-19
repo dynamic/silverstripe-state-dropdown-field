@@ -88,6 +88,16 @@ class StateDropdownField extends DropdownField
     /**
      * @var bool
      */
+    private static $include_provinces = true;
+
+    /**
+     * @var bool
+     */
+    private static $states_first = true;
+
+    /**
+     * @var bool
+     */
     private static $include_state_province_separator = true;
 
     /**
@@ -140,8 +150,12 @@ class StateDropdownField extends DropdownField
      * @param bool $includeProvinces
      * @return $this
      */
-    public function setStates($states = [], $includeProvinces = true)
+    public function setStates($states = [], $includeProvinces = null)
     {
+        $includeProvinces = isset($includeProvinces)
+            ? $includeProvinces
+            : $this->config()->get('include_provinces');
+
         if ($states !== (array)$states) {
             trigger_error(
                 "The \$source passed isn't an array. When passing a source it must be an array.",
@@ -156,7 +170,9 @@ class StateDropdownField extends DropdownField
         }
 
         if ($globalDefaults && $includeProvinces) {
-            $states = array_merge($states, $this->getDefaultProvincesList());
+            $states = (bool)$this->config()->get('states_first')
+                ? array_merge($states, $this->getDefaultProvincesList())
+                : array_merge($this->getDefaultProvincesList(), $states);
         }
 
         reset($states);
@@ -176,7 +192,19 @@ class StateDropdownField extends DropdownField
      */
     protected function getDefaultStatesList()
     {
-        return $this->config()->get('default_states');
+        $states = (
+            (bool)$this->config()->get('include_state_province_separator') &&
+            (bool)!$this->config()->get('states_first')
+        )
+            ? [
+                (string)$this->config()->get('option_separator_value') => (string)$this->config()->get(
+                    'option_separator'
+                ),
+            ]
+            : [];
+        $states = array_merge($states, $this->config()->get('default_states'));
+
+        return $states;
     }
 
     /**
@@ -184,7 +212,10 @@ class StateDropdownField extends DropdownField
      */
     protected function getDefaultProvincesList()
     {
-        $provinces = ((bool)$this->config()->get('include_state_province_separator'))
+        $provinces = (
+            (bool)$this->config()->get('include_state_province_separator') &&
+            (bool)$this->config()->get('states_first')
+        )
             ? [
                 (string)$this->config()->get('option_separator_value') => (string)$this->config()->get(
                     'option_separator'
